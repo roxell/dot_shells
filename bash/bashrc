@@ -1,6 +1,7 @@
 # Sourcing stuff...
-BASH=$HOME/etc/bash
-SH=$HOME/etc/shell
+BASH=$HOME/.bash
+SH=$HOME/.shell
+
 source $SH/environment.sh
 source $SH/aliases.sh
 source $SH/functions.sh

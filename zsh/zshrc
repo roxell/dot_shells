@@ -5,8 +5,8 @@
 ###############################################################################
 
 # Zsh and Bash config directory
-Z=$HOME/etc/zsh
-SH=$HOME/etc/shell
+Z=$HOME/.zsh
+SH=$HOME/.shell
 
 source $SH/environment.sh
 source $SH/aliases.sh
