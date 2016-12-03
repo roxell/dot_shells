@@ -16,5 +16,9 @@ mkcd() {
     mkdir $1 && cd $1
 }
 
+if [ -f $HOME/.aliases.local ]; then
+    source $HOME/.aliases.local
+fi
+
 ###############################################################################
 # vim: set expandtab shiftwidth=4 tabstop=4 softtabstop=4                     :
