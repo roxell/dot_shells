@@ -68,6 +68,7 @@ ARM64_TC=$(find $HOME -maxdepth 1 -type d -name 'arm64-tc*' | sort -h | tail -n1
 [[ -n $ARM_TC ]] && PATH="$ARM_TC/bin:$PATH"
 [[ -n $ARM64_TC ]] && PATH="$ARM64_TC/bin:$PATH"
 
+if [[ -d /usr/lib/ccache ]] && PATH="/usr/lib/ccache:$PATH"
 export PATH
 
 # }}}
