@@ -66,11 +66,6 @@ PATH=$(echo "$HOME_PATH:$PATH:$ORD_PATH" | sed -e 's|::|:|; s|:$||; s|^:||')
 unset ORD_PATH
 unset HOME_PATH
 
-ARM_TC=$(find $HOME -maxdepth 1 -type d -name 'arm-tc*' | sort -h | tail -n1)
-ARM64_TC=$(find $HOME -maxdepth 1 -type d -name 'arm64-tc*' | sort -h | tail -n1)
-[[ -n $ARM_TC ]] && PATH="$ARM_TC/bin:$PATH"
-[[ -n $ARM64_TC ]] && PATH="$ARM64_TC/bin:$PATH"
-
 if [[ -d /usr/lib/ccache ]]; then
     PATH="/usr/lib/ccache:$PATH"
 fi
