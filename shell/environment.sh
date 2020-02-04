@@ -59,6 +59,9 @@ do
     fi
 done
 
+export GOPATH=$HOME/gocode
+mkdir -p $GOPATH
+
 PATH=$(echo "$HOME_PATH:$PATH:$ORD_PATH" | sed -e 's|::|:|; s|:$||; s|^:||')
 unset ORD_PATH
 unset HOME_PATH
@@ -74,6 +77,11 @@ fi
 if [[ -d ${HOME}/.local/bin ]]; then
     PATH="/home/anders/.local/bin/:$PATH"
 fi
+
+if [[ -d ${GOPATH}/bin ]]; then
+    PATH="$GOPATH/bin:$PATH"
+fi
+
 export PATH
 
 # }}}
