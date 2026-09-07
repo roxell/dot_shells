@@ -11,6 +11,10 @@ ccache -M 15G >/dev/null
 set use_ccache=true
 set CCACHE_DIR="$HOME/.ccache"
 
+if [ -n "$UV_ACTIVE_VENV" ]; then
+    export PS1="($(basename $UV_ACTIVE_VENV)) $PS1"
+fi
+
 [[ -z $HOSTNAME ]] && export HOSTNAME="$(hostname -s)"
 [[ -z $DOMAINNAME ]] && export DOMAINNAME="$(hostname -d)"
 
