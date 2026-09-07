@@ -27,7 +27,7 @@ umask 027  # g-w,o-rwx
 umask 022  # g-w,o-w
 # }}}
 
-mesg n     # Disable write-messages
+#mesg n     # Disable write-messages
 
 stty -ixon
 
