@@ -7,7 +7,7 @@ export DEBFULLNAME="Anders Roxell"
 export DEBEMAIL="anders.roxell@linaro.org"
 
 #ccache -s
-#ccache -M 10G
+ccache -M 15G >/dev/null
 set use_ccache=true
 set CCACHE_DIR="$HOME/.ccache"
 
