@@ -59,6 +59,17 @@ do
     fi
 done
 
+if [[ -d /usr/lib/ccache ]]; then
+    PATH="/usr/lib/ccache:$PATH"
+fi
+if [[ -d ${HOME}/.local/bin ]]; then
+    PATH="/home/anders/.local/bin/:$PATH"
+fi
+
+if [[ -d ${GOPATH}/bin ]]; then
+    PATH="$GOPATH/bin:$PATH"
+fi
+
 for add_path in $HOME/bin $HOME/opt/bin
 do
     if ! echo $PATH |egrep "(^|:)${add_path}(:|$)" &>/dev/null
@@ -73,17 +84,6 @@ mkdir -p $GOPATH
 PATH=$(echo "$HOME_PATH:$PATH:$ORD_PATH" | sed -e 's|::|:|; s|:$||; s|^:||')
 unset ORD_PATH
 unset HOME_PATH
-
-if [[ -d /usr/lib/ccache ]]; then
-    PATH="/usr/lib/ccache:$PATH"
-fi
-if [[ -d ${HOME}/.local/bin ]]; then
-    PATH="/home/anders/.local/bin/:$PATH"
-fi
-
-if [[ -d ${GOPATH}/bin ]]; then
-    PATH="$GOPATH/bin:$PATH"
-fi
 
 export PATH
 
