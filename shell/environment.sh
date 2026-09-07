@@ -3,6 +3,9 @@ export EDITOR=nvim
 export VISUAL=nvim
 # }}}
 
+export DEBFULLNAME="Anders Roxell"
+export DEBEMAIL="anders.roxell@linaro.org"
+
 #ccache -s
 #ccache -M 10G
 set use_ccache=true
