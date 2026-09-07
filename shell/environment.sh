@@ -1,5 +1,6 @@
 # {{{ Important applications
-export EDITOR=vim
+export EDITOR=nvim
+export VISUAL=nvim
 # }}}
 
 #ccache -s
