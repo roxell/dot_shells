@@ -76,6 +76,12 @@ if [[ -d ${GOPATH}/bin ]]; then
     PATH="$GOPATH/bin:$PATH"
 fi
 
+mkdir -p ~/.npm-global
+if [[ -d ${HOME}/.npm-global ]]; then
+    npm config set prefix '~/.npm-global'
+    PATH="$HOME/.npm-global/bin:$PATH"
+fi
+
 for add_path in $HOME/bin $HOME/opt/bin
 do
     if ! echo $PATH |egrep "(^|:)${add_path}(:|$)" &>/dev/null
