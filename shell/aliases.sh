@@ -9,6 +9,8 @@ alias confcat='sed -e "s/#.*//;/^\s*$/d"'
 alias grep='grep --color'
 alias git='UMASK=002 git'
 alias ix="curl -F 'f:1=<-' -F 'read:1=5' ix.io"
+alias claude-laam='(cd ~/src/laam-review && claude --settings ~/.claude/env/laam-review.json)'
+alias opencode-laam='(cd ~/src/laam-review && opencode)'
 
 alias xtrem='xterm -fg white -bg black -fa "mono-8" "$@" '
 alias ee='gpicview'
