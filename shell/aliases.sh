@@ -19,7 +19,7 @@ alias xtrem='xterm -fg white -bg black -fa "mono-8" "$@" '
 alias ee='gpicview'
 
 mkcd() {
-    mkdir $1 && cd $1
+    mkdir -p $1 && cd $1
 }
 
 if [ -f $HOME/.aliases.local ]; then
