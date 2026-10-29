@@ -22,3 +22,5 @@ source $Z/completion.zsh
 
 ##############################################################################
 # vim: expandtab tabstop=4 shiftwidth=4 softtabstop=4                        :
+
+. "$HOME/.local/bin/env"
