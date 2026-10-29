@@ -69,7 +69,7 @@ if [[ -d /usr/lib/ccache ]]; then
     PATH="/usr/lib/ccache:$PATH"
 fi
 if [[ -d ${HOME}/.local/bin ]]; then
-    PATH="/home/anders/.local/bin/:$PATH"
+    PATH="$HOME/.local/bin:$PATH"
 fi
 
 export GOPATH=$HOME/gocode
@@ -92,7 +92,7 @@ do
     fi
 done
 
-PATH=$(echo "$HOME_PATH:$PATH:$ORD_PATH" | sed -e 's|::|:|; s|:$||; s|^:||')
+PATH=$(printf '%s' "$HOME_PATH:$PATH:$ORD_PATH" | awk -v RS=: -v ORS=: 'NF && !seen[$0]++' | sed 's|:$||')
 unset ORD_PATH
 unset HOME_PATH
 
