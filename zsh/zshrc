@@ -20,6 +20,17 @@ source $Z/prompt.zsh
 source $Z/keybindings.zsh
 source $Z/completion.zsh
 
+# Agent commands for git rvw: git rvw review -- "${rw[@]}"
+ro=(claude -p --restricted --strict-mcp-config
+    --plugin-dir ~/local-etc/dot_ai/agents/rvw-plugin
+    --tools Read,Grep,Glob,Skill
+    --append-system-prompt-file ~/local-etc/dot_ai/agents/AGENTS.md)
+rw=(claude -p --restricted --strict-mcp-config
+    --plugin-dir ~/local-etc/dot_ai/agents/rvw-plugin
+    --tools Read,Edit,Grep,Glob,Skill
+    --permission-mode acceptEdits
+    --append-system-prompt-file ~/local-etc/dot_ai/agents/AGENTS.md)
+
 ##############################################################################
 # vim: expandtab tabstop=4 shiftwidth=4 softtabstop=4                        :
 
