@@ -61,9 +61,10 @@ done
 
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-eval "$(pyenv virtualenv-init -)"
+if command -v pyenv >/dev/null; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
 
 if [[ -d /usr/lib/ccache ]]; then
     PATH="/usr/lib/ccache:$PATH"
@@ -78,8 +79,8 @@ if [[ -d ${GOPATH}/bin ]]; then
     PATH="$GOPATH/bin:$PATH"
 fi
 
-mkdir -p ~/.npm-global
-if [[ -d ${HOME}/.npm-global ]]; then
+if command -v npm >/dev/null; then
+    mkdir -p ~/.npm-global
     npm config set prefix '~/.npm-global'
     PATH="$HOME/.npm-global/bin:$PATH"
 fi
